@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block head %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/index.css') }}">
+    <script>
+        function btn_search_on_click() {
+            keyword = document.getElementById("kw").value;
+            let form = document.getElementById("search_form");
+            form.action = "/search/" + keyword;
+            form.submit();
+
+        }
+    </script>
+{% endblock %}
+
+{% block page_content %}
+    <div class="row">
+    <div class="search_container col-md-4 col-md-offset-4">
+            <form id="search_form" action="/search/" target="_blank" method="post">
+                <div class="form-inline input-group">
+                    <span class="input-group-btn">
+                        <input id="kw" type="text" class="form-control col-lg-3" placeholder="搜你想搜的" size="30"  />
+                        <input type="button"  class="btn btn-default"  value="搜一下" onclick="btn_search_on_click()"/>
+                    </span>
+                </div>
+        </form>
+    </div>
+    </div>
+{% endblock %}

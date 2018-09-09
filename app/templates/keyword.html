@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% block page_content %}
+        <h2>
+    {{ keyword }}
+    </h2>
+    <hr>
+    <ul class="list-group">
+    {% for subject in result %}
+            <li class="list-group-item"><a href="/entity/{{ subject }}">{{ subject }}</a></li>
+    {% endfor %}
+    </ul>
+
+{% endblock %}

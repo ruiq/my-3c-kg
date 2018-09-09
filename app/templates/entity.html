@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+
+{% block page_content %}
+    <h2>{{ keyword }}</h2>
+    <table class="table">
+        {% for spo in result %}
+            <tr>
+                <td>{{ spo["p"] }}</td>
+                <td>{{ spo["o"] }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
